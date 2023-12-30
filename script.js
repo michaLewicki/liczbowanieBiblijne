@@ -124,6 +124,7 @@ window.onload = function()
     var controlVal = 1;
     var temp = 0;
     var c;
+    var tekst = "";
     
 	przycisk.onclick = function()
 	{
@@ -131,9 +132,16 @@ window.onload = function()
         verseVal = 0;
         controlVal = 1;
         temp = 0;
+        tekst = input.value;
+        if(tekst.length === 0) return false;
+
         for (var i = 0; i < input.value.length; i++)
         {
             c = input.value[i];
+            if(encodeURIComponent(c) === encodeURIComponent("<") || encodeURIComponent(c) === encodeURIComponent(">"))
+            {
+                tekst = zamienZnak(tekst,i,"?");
+            }
             if (c == ' ') continue;
             if (c == ',') continue;
 
@@ -141,7 +149,7 @@ window.onload = function()
             if(temp === 0)
             {
                 if(c === "\n") wynik.innerHTML += "<pre>" + "Wykryto i pominięto znak nowej linii.</pre><br />";
-                else wynik.innerHTML += "<pre>" + "Pominięto nierozpoznany znak: " + c + "</pre><br />";
+                else wynik.innerHTML += "<pre>" + "Pominięto nierozpoznany znak: " + tekst[i] + "</pre><br />";
                 controlVal = 0;
             }
             else
@@ -158,16 +166,23 @@ window.onload = function()
         else wynik.innerHTML = "<div class='suma ramka czerwona'>" + "Reszta z dzielenia przez 7 = " + verseVal % 7 + "</div>" + document.getElementById("wynik").innerHTML;
         
         wynik.innerHTML = "<div class='suma ramka'>" + "Suma wartości liter: <div class='liczba'>" + verseVal + "</div></div>" + document.getElementById("wynik").innerHTML;
-        wynik.innerHTML = "<div class='suma'>" + "Analizowany tekst:<br /><div class='wynikTekst'>" + input.value + "</div></div><br />" + document.getElementById("wynik").innerHTML;
+        wynik.innerHTML = "<div class='suma'>" + "Analizowany tekst:<br /><div class='wynikTekst'>" + tekst + "</div></div><br />" + document.getElementById("wynik").innerHTML;
 
         return false;
 	}
 };
 
-function wartoscLitery(litera) {
+function wartoscLitery(litera) 
+{
     for (var v in wartosci) 
     {
 	   if (litera === v) return wartosci[v];
 	}
 	return 0;
+ };
+
+ function zamienZnak(str, indeks, znak)
+ {
+    if(indeks > str.length - 1) return str;
+    return str.substring(0,indeks) + znak + str.substring(indeks + 1);
  };
