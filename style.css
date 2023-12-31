@@ -1,6 +1,7 @@
 body {
     color: white;
     margin: 0;
+    background-color: #18104f;
 }
 .background{
     background-image: linear-gradient(to bottom right, #31345f, #18104f);
@@ -17,69 +18,242 @@ body {
     transform: translateX(-50%);
     width: 80%;
 }
-#header{
-    color: white;
-    font-family: 'Verdana';
-    font-size: 4vh;
-    font-weight: bold;
-    text-align: center;
+
+
+/* mobile */
+@media (pointer: coarse)  {
+	#header{
+        color: white;
+        font-family: 'Verdana';
+        font-size: calc(10px + 3vw);
+        font-weight: bold;
+        text-align: center;
+    }
+    .formularz > form
+    {
+        font-family: 'Verdana';
+        font-size: calc(10px + 3vw);
+        width: 90%;
+        background-color: #49494938;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px;
+        border: solid #000 2px;
+        border-radius: 25px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    .formularz textarea
+    {
+        background-color: #ffffff;
+        width: 70%;
+        font-family: 'Verdana';
+        font-size: calc(5px + 3vw);
+        border-radius: 5px;
+    }
+    .oblicz{
+        background-color: #4040a0;
+        display: inline-block;
+        width: 40%;
+        height: 10%;
+        border-radius: 10px;
+        border: solid white 2px;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        font-family: 'Verdana';
+        font-weight: bold;
+        font-size: calc(10px + 2.5vw);
+        line-height: 50px;
+    }
+    .wynik{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-align: left;
+        font-size: calc(10px + 2vw);
+        font-family: monospace;
+    }
+    .wynikTekst{
+        font-weight: normal;
+    }
+    .suma{
+        font-family: 'Verdana';
+        font-weight: bold;
+        font-size: calc(10px + 2vw);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .uwaga{
+        font-family: 'Verdana';
+        font-size: calc(10px + 1vw);
+        font-weight: normal;
+        font-style: oblique;
+    }
+    .liczba{
+        color: yellow;
+        font-size: calc(20px + 3vw);
+    }
 }
-.formularz > form
-{
-    font-family: 'Verdana';
-    font-size: 3vh;
-    width: 70%;
-	background-color: #49494938;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 25px;
-    border: solid #000 2px;
-    border-radius: 25px;
-    margin-bottom: 0px;
-    text-align: center;
+
+/* desktop */
+@media (pointer: fine), (pointer: none){
+	#header{
+        color: white;
+        font-family: 'Verdana';
+        font-size: 4vh;
+        font-weight: bold;
+        text-align: center;
+    }
+    .formularz > form
+    {
+        font-family: 'Verdana';
+        font-size: 3vh;
+        width: 80%;
+        background-color: #49494938;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px;
+        border: solid #000 2px;
+        border-radius: 25px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    .formularz textarea
+    {
+        background-color: #ffffff;
+        width: 80%;
+        font-family: 'Verdana';
+        font-size: 2vh;
+        border-radius: 5px;
+    }
+    .oblicz{
+        background-color: #4040a0;
+        display: inline-block;
+        width: 40%;
+        height: 10%;
+        border-radius: 10px;
+        border: solid white 2px;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        font-family: 'Verdana';
+        font-weight: bold;
+        font-size: 3vh;
+        line-height: 50px;
+    }
+    .wynik{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-align: left;
+        font-size: 2vh;
+        font-family: monospace;
+    }
+    .wynikTekst{
+        font-weight: normal;
+    }
+    .suma{
+        font-family: 'Verdana';
+        font-weight: bold;
+        font-size: 2vh;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .uwaga{
+        font-family: 'Verdana';
+        font-size: 1.5vh;
+        font-weight: normal;
+        font-style: oblique;
+    }
+    .liczba{
+        color: yellow;
+        font-size: 3vh;
+    }
 }
-.formularz textarea
-{
-    background-color: #ffffff;
-    width: 70%;
-    font-family: 'Verdana';
-    font-size: 2vh;
-    border-radius: 5px;
+/* touch desktop */
+@media (pointer: fine) and (any-pointer: coarse) {
+	#header{
+        color: white;
+        font-family: 'Verdana';
+        font-size: calc(10px + 1.5vw);
+        font-weight: bold;
+        text-align: center;
+    }
+    .formularz > form
+    {
+        font-family: 'Verdana';
+        font-size: calc(10px + 1vw);
+        width: 70%;
+        background-color: #49494938;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 25px;
+        border: solid #000 2px;
+        border-radius: 25px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    .formularz textarea
+    {
+        background-color: #ffffff;
+        width: 70%;
+        font-family: 'Verdana';
+        font-size: calc(5px + 1vw);
+        border-radius: 5px;
+    }
+    .oblicz{
+        background-color: #4040a0;
+        display: inline-block;
+        width: 40%;
+        height: 10%;
+        border-radius: 10px;
+        border: solid white 2px;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        font-family: 'Verdana';
+        font-weight: bold;
+        font-size: calc(10px + 1vw);
+        line-height: 50px;
+    }
+    .wynik{
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-align: left;
+        font-size: 2vh;
+        font-family: monospace;
+    }
+    .wynikTekst{
+        font-weight: normal;
+    }
+    .suma{
+        font-family: 'Verdana';
+        font-weight: bold;
+        font-size: 2vh;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .uwaga{
+        font-family: 'Verdana';
+        font-size: 1.5vh;
+        font-weight: normal;
+        font-style: oblique;
+    }
+    .liczba{
+        color: yellow;
+        font-size: 3vh;
+    }
 }
-.oblicz{
-    background-color: #4040a0;
-    display: inline-block;
-    width: 40%;
-    height: 10%;
-    border-radius: 10px;
-    border: solid white 2px;
-    color: white;
-    cursor: pointer;
-    text-align: center;
-    font-family: 'Verdana';
-    font-weight: bold;
-    font-size: 3vh;
-    line-height: 50px;
-}
-.wynik{
-    width: 70%;
-    margin-left: auto;
-	margin-right: auto;
-    color: white;
-    text-align: left;
-    font-size: 2vh;
-}
-.wynikTekst{
-    font-weight: normal;
-}
-.suma{
-    font-family: 'Verdana';
-    font-weight: bold;
-    font-size: 2vh;
-    text-align: center;
-    margin-left: auto;
-	margin-right: auto;
-}
+
+
 .ramka{
     background-color: rgb(0, 8, 80);
     width: max-content;
@@ -94,18 +268,4 @@ body {
 .czerwona{
     border: solid 1px;
     border-color: red;
-}
-.liczba{
-    color: yellow;
-    font-size: 3vh;
-}
-.uwaga{
-    font-family: 'Verdana';
-    font-size: 1.5vh;
-    font-weight: normal;
-    font-style: oblique;
-}
-pre 
-{
-    display: inline;
 }
