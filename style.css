@@ -73,7 +73,7 @@ body {
         color: white;
         text-align: left;
         font-size: calc(10px + 2vw);
-        font-family: monospace;
+        font-family: 'Verdana';
     }
     .wynikTekst{
         font-weight: normal;
@@ -180,15 +180,15 @@ body {
 	#header{
         color: white;
         font-family: 'Verdana';
-        font-size: calc(10px + 1.5vw);
+        font-size: 4vh;
         font-weight: bold;
         text-align: center;
     }
     .formularz > form
     {
         font-family: 'Verdana';
-        font-size: calc(10px + 1vw);
-        width: 70%;
+        font-size: 3vh;
+        width: 80%;
         background-color: #49494938;
         margin-left: auto;
         margin-right: auto;
@@ -201,9 +201,9 @@ body {
     .formularz textarea
     {
         background-color: #ffffff;
-        width: 70%;
+        width: 80%;
         font-family: 'Verdana';
-        font-size: calc(5px + 1vw);
+        font-size: 2vh;
         border-radius: 5px;
     }
     .oblicz{
@@ -218,11 +218,11 @@ body {
         text-align: center;
         font-family: 'Verdana';
         font-weight: bold;
-        font-size: calc(10px + 1vw);
+        font-size: 3vh;
         line-height: 50px;
     }
     .wynik{
-        width: 70%;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
         color: white;
