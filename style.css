@@ -46,7 +46,7 @@ body {
     .formularz textarea
     {
         background-color: #ffffff;
-        width: 70%;
+        width: 80%;
         font-family: 'Verdana';
         font-size: calc(5px + 3vw);
         border-radius: 5px;
