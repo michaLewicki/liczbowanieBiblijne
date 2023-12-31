@@ -179,7 +179,8 @@ window.onload = function()
     
     var verseVal = 0;
     var controlVal = 1;
-    var temp = 0;
+	var temp = 0;
+	var tempURI = "";
     var c;
     var tekst = "";
     
@@ -194,28 +195,35 @@ window.onload = function()
 
         for (var i = 0; i < input.value.length; i++)
         {
-            c = input.value[i];
-            if(encodeURIComponent(c) === encodeURIComponent("<") || encodeURIComponent(c) === encodeURIComponent(">"))
+			c = input.value[i];
+			tempURI = encodeURIComponent(c);
+            if(tempURI == "%3C" || tempURI == "%3E")
             {
                 tekst = zamienZnak(tekst,i,"?");
             }
             if (c == ' ') continue;
             if (c == ',') continue;
+            if (c == '.') continue;
+			if (c == ';') continue;
+			if(c == "\n") 
+			{
+				wynik.innerHTML += "Wykryto i pominięto znak nowej linii.<br />";
+				continue;
+			}
 
             temp = wartoscLitery(c);
             if(temp === 0)
             {
-                if(c === "\n") wynik.innerHTML += "<pre>" + "Wykryto i pominięto znak nowej linii.</pre><br />";
-                else wynik.innerHTML += "<pre>" + "Pominięto nierozpoznany znak: " + tekst[i] + "</pre><br />";
+                wynik.innerHTML += "Nierozpoznany znak: " + tekst[i] + "<br />";
                 controlVal = 0;
             }
             else
             {
                 verseVal += temp;
-                wynik.innerHTML += "<pre>" + c + " -> " + temp + "</pre><br />";
+                wynik.innerHTML += c + " -> " + temp + "<br />";
             }
         }
-        wynik.innerHTML = "<br /><br /></div><pre>Szczegóły:</pre><br />" + document.getElementById("wynik").innerHTML;
+        wynik.innerHTML = "<br /><br /></div>Szczegóły:<br />" + document.getElementById("wynik").innerHTML;
 
         if(controlVal === 0) wynik.innerHTML = "<br /><div class='uwaga'>Wykryto przynajmniej jeden nierozpoznany znak. Sprawdź szczegóły poniżej.</div>" + document.getElementById("wynik").innerHTML;
 
