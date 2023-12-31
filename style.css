@@ -25,14 +25,14 @@ body {
 	#header{
         color: white;
         font-family: 'Verdana';
-        font-size: calc(10px + 3vw);
+        font-size: calc(20px + 3vw);
         font-weight: bold;
         text-align: center;
     }
     .formularz > form
     {
         font-family: 'Verdana';
-        font-size: calc(10px + 3vw);
+        font-size: calc(5px + 3vw);
         width: 90%;
         background-color: #49494938;
         margin-left: auto;
@@ -110,7 +110,7 @@ body {
     .formularz > form
     {
         font-family: 'Verdana';
-        font-size: 3vh;
+        font-size: 2.5vh;
         width: 80%;
         background-color: #49494938;
         margin-left: auto;
@@ -187,7 +187,7 @@ body {
     .formularz > form
     {
         font-family: 'Verdana';
-        font-size: 3vh;
+        font-size: 2.5vh;
         width: 80%;
         background-color: #49494938;
         margin-left: auto;
