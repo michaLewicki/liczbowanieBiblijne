@@ -223,6 +223,7 @@ window.onload = function()
                 wynik.innerHTML += c + " -> " + temp + "<br />";
             }
         }
+	wynik.innerHTML += "<br /><br />";
         wynik.innerHTML = "<br /><br /></div>Szczegóły:<br />" + document.getElementById("wynik").innerHTML;
 
         if(controlVal === 0) wynik.innerHTML = "<br /><div class='uwaga'>Wykryto przynajmniej jeden nierozpoznany znak. Sprawdź szczegóły poniżej.</div>" + document.getElementById("wynik").innerHTML;
